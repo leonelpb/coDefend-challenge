@@ -1,0 +1,112 @@
+<div class="dashboard-container">
+  <aside class="dashboard-sidebar">
+    <app-side-menu></app-side-menu>
+  </aside>
+
+  <main class="dashboard-content-area">
+    <div class="grid-column-1">
+      <div class="asset-stats-grid-column-1-top">
+        @if(showRadarExploreCard){
+          <app-section-radar-card
+          title="Exploración de superficie en curso"
+          buttonText="Ir hacia la sección de issues"
+
+          (buttonClick)="handleExploreIssuesClick()"
+        >
+        </app-section-radar-card>
+        }@else{
+          <app-issues-overview-list></app-issues-overview-list>
+        }
+
+      </div>
+
+      <div class="asset-stats-grid-column-1-center">
+        <app-asset-stat-card
+          label="WEB APP/SITE"
+          [count]="1"
+        ></app-asset-stat-card>
+        <app-asset-stat-card
+          label="MOBILE APPS"
+          [count]="0"
+        ></app-asset-stat-card>
+        <app-asset-stat-card
+          label="NETWORK ASSETS"
+          [count]="0"
+        ></app-asset-stat-card>
+        <app-asset-stat-card
+          label="CLOUD ASSETS"
+          [count]="0"
+        ></app-asset-stat-card>
+        <app-asset-stat-card
+          label="SOURCE CODE"
+          [count]="0"
+        ></app-asset-stat-card>
+        <app-asset-stat-card
+          label="SOCIAL ASSETS"
+          [count]="0"
+        ></app-asset-stat-card>
+        <app-add-resources
+          title="Añadir recursos"
+          buttonText="Ir hacia recursos"
+        ></app-add-resources>
+      </div>
+      <div class="asset-stat-grid-column-1-bottom">
+        <app-add-member></app-add-member>
+        <app-member-list></app-member-list>
+      </div>
+    </div>
+
+    <div class="grid-column-2">
+      <div class="asset-stat-grid-column-2-top">
+        <app-asset-stat-card
+          [count]="0"
+          label="OPEN ISSUES"
+          color="$color-primary"
+        ></app-asset-stat-card>
+        <app-asset-stat-card
+          [count]="0"
+          label="FIXED ISSUES"
+          color="$color-green"
+        ></app-asset-stat-card>
+        <app-asset-stat-card
+          [count]="0"
+          label="TOTAL ISSUES"
+          color="$color-text-dark"
+        ></app-asset-stat-card>
+      </div>
+      <div class="chart-container-column-2">
+        <app-issue-chart></app-issue-chart>
+      </div>
+        @if(scanProgressValue < 100){
+          <div class="scanneo-on-going-card">
+            <app-progress-stat
+            [title]="'Scanneo en curso'"
+            [description]="'Los scanners automaticos están analizando uno de sus recursos web:'"
+            [domain]="'www.lanacion.com'"
+            [progress]="scanProgressValue"
+            ></app-progress-stat>
+          </div>
+          @if(scanProgressValue < 100){
+            <div class="scanneo-on-going-card-assets" >
+              <app-asset-stat-card
+              [count]="26"
+              label="TOTAL FINDINGS"
+              color="$color-primary"
+            ></app-asset-stat-card>
+            <app-asset-stat-card
+              [count]="0/26"
+              label="PARSED FINDINGS"
+              color="$color-text-dark"
+            ></app-asset-stat-card>
+            <app-asset-stat-card
+              [count]="82"
+              label="EST.PROGRESS"
+            ></app-asset-stat-card>
+            </div>
+          }
+        }@else {
+          <app-finished-scans-list [scans]="finishedScansData"></app-finished-scans-list>
+        }
+      </div>
+  </main>
+</div>

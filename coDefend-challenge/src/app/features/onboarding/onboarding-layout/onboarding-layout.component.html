@@ -1,0 +1,80 @@
+<div class="onboarding-container">
+  <div class="onboarding-container-header">
+    <app-header></app-header>
+    <h4>Nuevo usuario</h4>
+  </div>
+
+  <app-progress-bar
+    [currentStep]="currentStep"
+    [totalSteps]="totalSteps"
+  ></app-progress-bar>
+
+  <div class="onboarding-container-body">
+    @if (currentStep === 1){
+    <p>
+      Bienvenido. Codefend es una plataforma completa para pentest continuo,
+      detección temprana de amenazas, y protección de assets e infraestructura,
+      empleando una red de hackers decentralizada especializados en diversas
+      áreas.
+    </p>
+    } @if (currentStep === 2) {
+    <p>
+      Vamos a intentar de hackearte lo antes posible. Conducimos toda clase de
+      pruebas sobre la superficie de tu empresa, desde pentest convencional,
+      hasta detección de dataleaks, técnicas sociales avanzadas y más.
+    </p>
+    } @else if (currentStep === 3) {
+    <p>
+      Una vez que crees tu usuario, vamos a ayudarte con el alta de tu primer
+      recurso, y realizaremos una serie de pruebas automatizadas empleando
+      scanners automatizados e inteligencia artificial.
+    </p>
+    } @else if (currentStep === 4) {
+    <p>
+      ¡Listo! Alcanzamos la etapa final, solo queda definir tu password para
+      obtener acceso al sistema y nuestra prueba sin cargos. El password debe
+      tener 1 numero, 1 Letra, 12 caracteres, y un símbolo.
+    </p>
+    } @if (currentStep === 1) {
+    <app-personal-details (nextStep)="goToNextStep()"></app-personal-details>
+    } @else if (currentStep === 2) {
+    <app-business-details
+      (nextStep)="goToNextStep()"
+      (prevStep)="goToPreviousStep()"
+    ></app-business-details>
+    } @else if (currentStep === 3) {
+    <app-confirm-email
+      (nextStep)="goToNextStep()"
+      (prevStep)="goToPreviousStep()"
+    ></app-confirm-email>
+    } @else if (currentStep === 4) {
+    <app-create-password
+      (finish)="handleFinish()"
+      (prevStep)="goToPreviousStep()"
+    ></app-create-password>
+    }
+
+    <div class="navigation">
+      @if (currentStep > 1 ) {
+      <app-button
+        text="Previo"
+        variant="secondary"
+        (click)="goToPreviousStep()"
+        [disabled]="currentStep === 1"
+      ></app-button>
+      } @if (currentStep < totalSteps) {
+      <app-button
+        text="Proximo"
+        variant="primary"
+        (click)="goToNextStep()"
+      ></app-button>
+      } @if (currentStep === totalSteps) {
+      <app-button
+        text="Finalizar"
+        variant="primary"
+        (click)="handleOnboardingComplete()"
+      ></app-button>
+      }
+    </div>
+  </div>
+</div>

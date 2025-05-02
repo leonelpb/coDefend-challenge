@@ -1,0 +1,51 @@
+@import './../../../styles/variables'; 
+.side-menu {
+  background-color: $color-white; 
+  padding: $spacing-md $spacing-sm; 
+  width: 100%;
+}
+
+.menu-section {
+  margin-bottom: $spacing-sm; 
+  &:last-child {
+    margin-bottom: 0; 
+  }
+}
+
+.section-title {
+  font-size: $font-size-base * 1.2; 
+  font-weight: bold;
+  color: $color-text-dark; 
+  margin-top: 0; 
+  margin-bottom: $spacing-xs; 
+}
+
+.menu-items-list {
+  list-style: none; 
+  padding: 0;
+  margin: 0; 
+}
+
+.menu-item {
+  margin-bottom: $spacing-xs; 
+  &:last-child {
+    margin-bottom: 0; 
+  }
+}
+
+.menu-link {
+  display: block;
+  text-decoration: none; 
+  font-size: $font-size-base; 
+  color: $color-text-grey; 
+  padding: $spacing-xxxs 0;
+  transition: color 0.2s ease; 
+
+  &:hover {
+    color: $color-primary;
+  }
+  &.active {
+    color: $color-primary; 
+    font-weight: bold; 
+  }
+}

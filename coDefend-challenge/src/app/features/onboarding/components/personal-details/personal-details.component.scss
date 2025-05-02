@@ -1,0 +1,45 @@
+@import '../../../../../styles/variables';
+
+.personal-details {
+    margin-bottom: $spacing-lg;
+  .phone-input-group {
+      display: flex;
+      align-items: start;
+      box-sizing: border-box;
+
+      .country-selector {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: $spacing-xs $spacing-xs;
+          border: 1px solid $color-border-grey;
+          border-radius: $border-radius-sm;
+          background-color: $color-white; 
+          margin-right: $spacing-xs;
+
+          .country-flag {
+              height: $spacing-sm; 
+              margin: 0;
+              margin-right: $spacing-xs;
+              width:$spacing-sm;
+          }
+
+          span {
+              color: $color-text-dark;
+              width: 100%;
+          }
+
+          .dropdown-arrow {
+              margin-left: $spacing-xs;
+              font-size: $font-size-base * 0.8; 
+              color: $color-text-grey;
+              width: 100%;
+          }
+      }
+
+      app-input-field {
+          flex-grow: 1;
+          margin-bottom: 0; 
+      }
+  }
+}

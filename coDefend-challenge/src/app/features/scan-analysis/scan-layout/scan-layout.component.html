@@ -1,0 +1,50 @@
+<div class="scan-container">
+  <div class="scan-container-header">
+    <app-header></app-header>
+  </div>
+  <div class="scan-container-body">
+    @if(currentStep === 1){
+    <app-input-scanner
+      placeholder="www.mercadolibre.com"
+      name="scannerSurface"
+      id="scannerSurface"
+      [(ngModel)]="scannerSurface"
+    >
+    </app-input-scanner>
+    } @if(currentStep === 2){
+    <app-confirm-analysis></app-confirm-analysis>
+    } @else if (currentStep === 3) {
+    <app-analysis-progress></app-analysis-progress>
+    }
+    <div
+      class="navigation"
+      [class.has-only-one-button]="currentStep === totalSteps"
+    >
+      @if(currentStep === 1){
+      <app-button
+        text="Dashboard"
+        variant="secondary"
+        (click)="goToPreviousStep()"
+      ></app-button>
+      } @if (currentStep > 1 && currentStep < totalSteps ) {
+      <app-button
+        text="Previo"
+        variant="secondary"
+        (click)="goToPreviousStep()"
+      ></app-button>
+      } @if (currentStep < totalSteps) {
+      <app-button
+        text="Proximo"
+        variant="primary"
+        (click)="goToNextStep()"
+      ></app-button>
+      } @if (currentStep === totalSteps) {
+      <app-button
+        text="Dashboard"
+        variant="secondary"
+        (click)="handleScanComplete()"
+      ></app-button>
+      }
+    </div>
+  </div>
+</div>

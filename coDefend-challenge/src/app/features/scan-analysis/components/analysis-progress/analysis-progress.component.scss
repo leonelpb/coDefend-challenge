@@ -1,0 +1,126 @@
+
+@import "./../../../../../styles/variables"; 
+
+.analysis-description {
+  margin-bottom: $spacing-sm; 
+  color: $color-text-grey; 
+  b {
+    color: $color-text-dark; 
+  }
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: $spacing-sm;
+  .spinner-percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: $font-size-base * 1.7;
+    color: $color-text-dark;
+  }
+}
+
+.spinner-circle {
+  position: relative;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  border: none;
+  background: repeating-conic-gradient(
+    $color-primary 0deg 60deg,
+    transparent 60deg 120deg
+  );
+  animation: spin 1s linear infinite; 
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    background-color: $color-white;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+}
+
+.findings-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $spacing-md;
+  align-content: center;
+  height: 15vh;
+  .finding-count {
+    text-align: center;
+    flex-basis: 45%;
+    flex-grow: 0.3;
+    flex-shrink: 0;
+    border: 1px solid rgb(0, 0, 0, 0.1);
+    border-radius: $spacing-xxs;
+    height: 100%;
+    align-content: center;
+  }
+  .count-number {
+    font-size: $font-size-base + 0.5rem; 
+    font-weight: bold;
+    color: $color-primary; 
+    margin-bottom: $spacing-xxs;
+  }
+  .count-number-analizing {
+    color: $color-text-grey;
+    font-size: $font-size-base + 0.5rem;
+    margin-bottom: $spacing-xxs; 
+  }
+
+  .count-label-total,
+  .count-label-analizing {
+    font-size: $font-size-base - 0.1rem; 
+    text-transform: uppercase; 
+    font-weight: bold;
+  }
+  .count-label-total {
+    color: $color-primary;
+  }
+  .count-label-analizing {
+    color: $color-text-grey;
+  }
+}
+
+.analysis-details {
+  .detail-row {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: $spacing-xxs;
+
+    h4 {
+      font-size: $font-size-base;
+      font-weight: bold;
+      color: $color-text-dark;
+      margin-right: $spacing-xs;
+      margin-bottom: 0;
+      flex-shrink: 0;
+    }
+
+    span {
+      font-size: $font-size-base;
+      color: $color-text-grey;
+      flex-grow: 1;
+    }
+  }
+}

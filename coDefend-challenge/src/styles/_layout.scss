@@ -1,0 +1,13 @@
+.centered-content-container {
+  max-width: 600px; // Ancho máximo del contenido centrado (ajusta según necesidad)
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 $spacing-sm; // Padding horizontal para evitar que el contenido toque los bordes en pantallas pequeñas
+  width: 100%; // Asegura que ocupe todo el ancho disponible hasta el max-width
+  box-sizing: border-box; // Incluye padding en el ancho total
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}

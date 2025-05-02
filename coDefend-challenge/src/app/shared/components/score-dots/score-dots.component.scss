@@ -1,0 +1,19 @@
+@import "./../../../../styles/variables";
+
+.score-dots-container {
+  display: flex; 
+  align-items: center;
+  gap: 2px; 
+}
+
+.score-dot {
+  display: inline-block; 
+  width: $spacing-xs; 
+  height: $spacing-xs; 
+  border-radius: 50%; 
+  background-color: $color-background-grey; 
+}
+
+.score-dot.score-dot--red {
+  background-color: $color-primary; 
+}

@@ -1,0 +1,61 @@
+@import './../../../../../styles/variables'; // Ajusta la ruta si es necesario
+
+.radar-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+}
+
+.radar-canvas {
+  position: absolute; 
+  inset: 0;
+  border-radius: 100%; 
+}
+
+.radar-bugs-container {
+  position: absolute; 
+  inset: 0; 
+  pointer-events: none; 
+  overflow: hidden; 
+}
+
+.radar-bug-content {
+  position: absolute; 
+  transform-origin: center center; 
+  transition: all ease 0.7s;
+}
+
+.radar-bug {
+  width: 2.5rem;
+  height: 2.5rem;
+  position: relative; 
+}
+
+.bug {
+  width: 100%; 
+  height: 100%;
+  object-fit: contain; 
+  position: relative;
+  z-index: 2;
+}
+
+.radar-bug-glow {
+  position: absolute; 
+  width: 200%; 
+  height: 200%;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 48, 48, 0.4) 0%, rgba(255, 48, 48, 0) 70%); 
+  filter: blur(8px); 
+  opacity: 0; 
+  transition: opacity 0.3s ease-in-out; 
+}
+
+.radar-bug-content.animate-detected .radar-bichardo-glow {
+    opacity: 1; 
+}

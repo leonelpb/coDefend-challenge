@@ -1,0 +1,34 @@
+<div class="personal-details">
+  <h4>Personal details:</h4>
+
+  <app-input-field
+    placeholder="First name"
+    label="First name"
+    type="text"
+    [(ngModel)]="firstName"
+  ></app-input-field>
+  <app-input-field
+    label="Last name"
+    type="text"
+    placeholder="Last name"
+    [(ngModel)]="lastName"
+  ></app-input-field>
+  <app-input-field
+    label="email"
+    type="email"
+    placeholder="Professional email"
+    [(ngModel)]="email"
+  ></app-input-field>
+  <div class="phone-input-group">
+    <div class="country-selector">
+      <img src="assets/flags/ar.svg" alt="Argentina Flag" class="country-flag" />
+      <span>+54</span>
+      <span class="dropdown-arrow">▼</span>
+    </div>
+    <app-input-field
+      placeholder="Phone number"
+      type="tel"
+      [(ngModel)]="phoneNumber"
+    ></app-input-field>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+@import 'styles/variables';
+@import 'styles/layout';
+
+html {
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: 1.5;
+  color: $color-text-dark;
+  background-color: $color-background-light-grey;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: $spacing-sm;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: $spacing-sm;
+}

@@ -1,0 +1,28 @@
+<div class="issues-overview-card">
+    <h3 class="card-title">Issues overview</h3> 
+  
+    <table class="issues-table">
+      <thead>
+        <tr>
+          <th class="header-published">published</th>
+          <th class="header-title">issue title</th>
+          <th class="header-score">score</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (issue of issues; track trackByTitle($index,issue)) {
+          <tr class="issue-row">
+            <td class="issue-published">{{ issue.published }}</td>
+            <td class="issue-title">{{ issue.title }}</td>
+            <td class="issue-score" [class.good-score]="issue.score >= 3">
+             {{issue.score}} <app-score-dots [score]="issue.score" [maxScore]="maxScore"></app-score-dots>
+            </td>
+          </tr>
+        } @empty {
+          <tr>
+            <td colspan="3" class="no-issues-message">No hay issues disponibles.</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>

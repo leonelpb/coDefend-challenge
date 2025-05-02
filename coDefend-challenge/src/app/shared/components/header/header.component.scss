@@ -1,0 +1,22 @@
+@import './../../../../styles/variables';
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: $spacing-xl;
+  background-color: $color-white;
+  border-bottom: 1px solid $color-background-light-grey;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0;
+  position: relative;
+  min-height: 5vh;
+
+}
+
+.header__logo {
+  height: $spacing-xl;
+  width: auto;
+  position:absolute;
+  top: 0;
+  left: -2.75%;
+}

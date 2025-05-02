@@ -1,0 +1,62 @@
+@import "./../../../../styles/variables";
+
+:host,
+.scan-container-header {
+  display: flex;
+  flex-direction: column;
+  background-color: $color-white;
+}
+.scan-container-header{
+  max-height: 10vh;
+}
+.scan-container {
+  max-width: 25vw;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+}
+.scan-container-header {
+  padding: $spacing-sm $spacing-xl;
+  padding-bottom: 0;
+}
+.scan-container-body {
+  display: flex;
+  flex-direction: column;
+  background-color: $color-white;
+  padding: $spacing-md $spacing-xl;
+  padding-top: 0;
+  flex-grow: 1;
+  position:relative ;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  margin-top: $spacing-xs;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: $spacing-md $spacing-xl;
+  padding-top: 0;
+  box-sizing: border-box;
+  app-button {
+    flex-shrink: 0;
+  }
+  app-button:first-child:not(:only-child) {
+    width: 42%;
+  }
+  app-button:last-child:not(:only-child) {
+    width: 55%;
+  }
+  &.has-only-one-button {
+    justify-content: start;
+
+    app-button:only-child {
+      width: 50%;
+      flex-shrink: 0;
+      flex-grow: 0;
+    }
+  }
+}

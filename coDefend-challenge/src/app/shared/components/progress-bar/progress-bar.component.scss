@@ -1,0 +1,79 @@
+@import "./../../../../styles/variables";
+
+.step-indicator {
+  width: 100%;
+  padding: $spacing-sm 0;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $color-white;
+}
+
+.step-indicator__line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: $color-border-grey;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+.step-indicator__line__red {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ff0033;
+  z-index: 1;
+  transition: width 0.3s ease;
+}
+
+.step-indicator__steps {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.step-indicator__step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.step-indicator__circle {
+  width: $spacing-sm;
+  height: $spacing-sm;
+  border-radius: 50%;
+  background-color: $color-border-grey;
+  border: 2px solid $color-white;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+}
+
+.step-indicator__step--active .step-indicator__circle {
+  background-color: $color-primary;
+}
+.step-indicator__step--completed .step-indicator__circle {
+  background-color: $color-primary;
+}
+
+.step-indicator__step--active::after {
+  content: "";
+  position: absolute;
+  top: 50%; 
+  left: 50%; 
+  width: $spacing-xs; 
+  height: $spacing-xs; 
+  background-color: $color-primary;
+  border-radius: 50%;
+  transform: translate(-50%, -50%); 
+  z-index: 3; 
+}

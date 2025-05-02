@@ -1,0 +1,13 @@
+<div class="scan-progress-card">
+  <h3 class="card-title">{{ title }}</h3>
+  <p class="card-description">
+    {{ description }} <b>{{ domain }}</b>
+  </p>
+
+  <div class="progress-bar-container">
+    <!-- Elemento que representa el progreso-->
+    <div class="progress-fill" [style.width.%]="progress"></div>
+    <!-- Bindear el ancho al valor de progreso -->
+  </div>
+
+</div>

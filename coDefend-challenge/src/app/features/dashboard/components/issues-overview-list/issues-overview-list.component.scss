@@ -1,0 +1,75 @@
+@import "./../../../../../styles/variables";
+.issues-overview-card {
+    background-color: $color-white; 
+    border-radius: $border-radius-md; 
+    padding: $spacing-md; 
+    box-sizing: border-box;
+    height: 100%;
+  }
+
+  .card-title {
+    font-size: $font-size-base * 1.2; 
+    font-weight: bold;
+    color: $color-text-dark;
+  }
+
+  .issues-table {
+    width: 100%; 
+    border-collapse: collapse; 
+    border-spacing: 0; 
+  }
+
+  /* Estilos para el encabezado de la tabla */
+  thead tr th {
+    text-align: left; 
+    font-size: $font-size-base; 
+    font-weight:600;
+    color: $color-text-grey;
+    padding-bottom: $spacing-xs; 
+    padding-top: 0;
+
+  }
+
+  /* Anchos de columnas (ajusta según el diseño) */
+  .header-published { width: 15%; }
+  .header-title { width: 65%; } 
+  .header-score { width: 20%; text-align: center; } 
+
+  .issue-row td {
+    font-size: $font-size-base;
+    color: $color-text-grey;
+    padding: $spacing-xs 0; 
+    border-bottom: 1px solid $color-background-light-grey; 
+  }
+
+  /* Estilo para la última fila */
+  tbody tr:last-child td {
+    border-bottom: none; 
+  }
+
+  .issue-title {
+    word-break: break-word;
+  }
+
+  .issue-score {
+     text-align: center; 
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     justify-content: start;
+     app-score-dots{
+      margin-left:$spacing-xs;
+     }
+  }
+
+  /* Estilo cuando el score es >= 3*/
+  .issue-row td.issue-score.good-score {
+    color: $color-primary;
+  }
+
+  /* Estilo para el mensaje de "no hay issues" */
+  .no-issues-message {
+    text-align: center;
+    padding: $spacing-md 0;
+    color: $color-text-grey;
+  }

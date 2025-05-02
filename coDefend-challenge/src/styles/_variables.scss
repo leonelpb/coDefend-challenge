@@ -1,0 +1,31 @@
+//Main colors
+$color-primary: #FF0033;
+$color-primary-dark: darken($color-primary, 10%); // Un rojo un poco más oscuro para hover/active
+$color-text-dark: #333333;
+$color-text-grey: #808080;
+$color-border-grey: #CCCCCC;
+$color-background-bone-grey:#ececec;
+$color-background-light-grey: #fefffe;
+$color-background-grey: #cccdcd;
+$color-white: #FFFFFF;
+
+//Optional
+$color-border-grey: #CCCCCC;
+
+//Typography
+$font-family-base: sans-serif;
+$font-size-base: 0.8rem;
+
+// Spacing
+$spacing-xxxs: 0.1rem; // 1.6px
+$spacing-xxs: 0.25rem; // 4px
+$spacing-xs: 0.5rem;   // 8px
+$spacing-sm: 1rem;     // 16px
+$spacing-md: 1.5rem;   // 24px
+$spacing-lg: 2rem;     // 32px
+$spacing-xl: 3rem;     // 48px
+
+// Others
+$border-radius-sm: 0.25rem;
+$border-radius-md: 0.5rem;
+$box-shadow-base: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);

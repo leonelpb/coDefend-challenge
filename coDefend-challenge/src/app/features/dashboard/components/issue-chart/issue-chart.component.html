@@ -1,0 +1,34 @@
+<div class="issue-chart-card">
+    <div class="chart-layout">
+      <!-- Área de la Leyenda -->
+      <table class="chart-legend">
+        <thead class="chart-legend-titles">
+          <tr>
+            <th class="legend-title">Risk level</th>
+            <th class="legend-title">Issues count</th>
+          </tr>
+        </thead>
+        <!-- Lista de ítems de la leyenda -->
+        <tbody class="legend-items">
+          @for (segment of chartData; track trackByLevel($index,segment)) {
+            <tr class="legend-item">
+              <td class="item-level">{{ segment.level }}</td>
+              <td class="item-count">{{ segment.count }} / {{ segment.percentage }}%</td>
+            </tr>
+          } @empty {
+            <div class="no-data-message">No hay datos de issues disponibles.</div>
+          }
+        </tbody>
+      </table>
+  
+      <!-- Área del Gráfico -->
+      <div class="chart-area">
+        <canvas baseChart
+        class="chart-canvas" 
+        [data]="doughnutChartData"
+        [options]="doughnutChartOptions" 
+        [type]="doughnutChartType"> 
+</canvas>
+      </div>
+    </div>
+  </div>

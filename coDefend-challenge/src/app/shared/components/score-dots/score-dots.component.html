@@ -1,0 +1,6 @@
+<div class="score-dots-container">
+    @for (isRed of dots; track $index) {
+      <!-- Cada punto -->
+      <span class="score-dot" [class.score-dot--red]="isRed"></span> 
+    }
+  </div>

@@ -1,0 +1,29 @@
+@import "./../../../../../styles/variables";
+
+.section-card {
+  background-color: $color-white;
+  border-radius: $border-radius-md;
+  padding: $spacing-md;
+  display: flex;
+  gap: $spacing-md;
+  align-items: center;
+  box-sizing: border-box;
+  height: 100%;
+  .section-content-area {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+  }
+
+  .section-title {
+    font-size: $font-size-base;
+    font-weight: bold;
+    color: $color-text-dark;
+  }
+}
+
+app-button {
+  width: auto;
+  align-self: flex-start;
+}

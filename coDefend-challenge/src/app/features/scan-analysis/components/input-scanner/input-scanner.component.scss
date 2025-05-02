@@ -1,0 +1,131 @@
+@import "../../../../../styles/variables"; 
+
+.input-container {
+  display: flex; 
+  align-items: center; 
+  border: 1px solid $color-border-grey;
+  border-radius: $border-radius-sm; 
+  padding: $spacing-xs; 
+  background-color: $color-white; 
+  margin-bottom: $spacing-sm; 
+  position: relative;
+
+  input {
+    flex-grow: 1;
+    border: none; 
+    outline: none; 
+    padding: 0 $spacing-xs; 
+    font-size: $font-size-base;
+    line-height: 1.5;
+    background-color: transparent; 
+    &::placeholder {
+      color: $color-text-grey;
+    }
+  }
+
+  .input-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $spacing-md; 
+    height: $spacing-md; 
+    cursor: pointer; 
+    color: $color-primary; 
+    position: absolute; 
+    right: $spacing-xs; 
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    &::before{
+      content: "";
+      border:1px solid  $color-border-grey;
+      left: -40%;
+      top: 0;
+      height: 100%;
+      position: absolute;
+    }
+
+    .icon {
+      width: 100%; 
+
+      height: 100%; 
+      object-fit: contain;
+    }
+  }
+}
+/* Estilos para la lista de sugerencias */
+.suggestions-list {
+  border:none; 
+  border-top: none; 
+  margin-top: -1px; 
+  background-color: $color-white;
+  position: relative; 
+  padding-left: $spacing-md; 
+  padding-bottom: $spacing-xs; 
+}
+
+.suggestion-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacing-xs $spacing-sm; 
+  padding-left: $spacing-xs; 
+  cursor: pointer;
+  border-bottom: 1px solid $color-background-light-grey; 
+  position: relative; 
+  margin-bottom: $spacing-xs; 
+
+  &:last-child {
+    border-bottom: none; 
+    margin-bottom: 0; 
+  }
+
+  &:hover {
+    background-color: $color-background-light-grey; 
+  }
+
+  /* Línea conectora a la izquierda */
+  &::before {
+    content: "";
+    position: absolute;
+    left: $spacing-xs * -2; 
+    top: 50%;
+    width: $spacing-sm; 
+    height: $spacing-xxxs; 
+    background-color: $color-primary; 
+    transform: translateY(-50%);
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    left: $spacing-xs * -2;
+    bottom: 0;
+    width: $spacing-xxxs; 
+    height: 122%; 
+    background-color: $color-primary;
+  }
+  &:nth-last-child(4) {
+    opacity: 0.7;
+  }
+  &:nth-last-child(3) {
+    opacity: 0.6;
+  }
+  &:nth-last-child(2) {
+    opacity: 0.4;
+  }
+  &:nth-last-child(-n+1) {
+    opacity: 0.3;
+  }
+}
+
+.suggestion-text {
+  font-size: $font-size-base;
+  color: $color-text-dark;
+  flex-grow: 1; 
+  margin-right: $spacing-xs; 
+}
+
+.suggestion-flag {
+  height: $spacing-md;
+  width: auto;
+}

@@ -1,0 +1,13 @@
+<div class="step-indicator"#container>
+  <div class="step-indicator__line"></div>
+  <div class="step-indicator__line__red" #lineElement></div>
+  <div class="step-indicator__steps">
+    @for (step of steps; track step) {
+      <div  #stepElements class="step-indicator__step" 
+      [class.step-indicator__step--active]="step === currentStep"
+      [class.step-indicator__step--completed]="step< currentStep">
+        <div class="step-indicator__circle"></div>
+        </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,45 @@
+@import './../../../../../styles/variables'; 
+
+.scan-progress-card {
+  background-color: $color-white; 
+  border-radius: $border-radius-md; 
+  padding: $spacing-md; 
+  display: flex; 
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.card-title {
+  font-size: $font-size-base * 1.2; 
+  font-weight: bold;
+  color: $color-text-dark;
+  margin: 0; 
+}
+
+.card-description {
+  font-size: $font-size-base;
+  color: $color-text-grey; 
+  margin: 0; 
+
+  b {
+      color: $color-text-dark;
+  }
+}
+
+.progress-bar-container {
+  width: 100%; 
+  height: $spacing-sm; 
+  background-color: lighten($color-primary, 20%); 
+  overflow: hidden; 
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: $color-primary; 
+  position: absolute; 
+  top: 0;
+  left: 0;
+}

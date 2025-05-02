@@ -1,0 +1,32 @@
+@import "./../../../../../styles/variables";
+
+.finding-count {
+  text-align: center;
+  flex-basis: 45%;
+  flex-grow: 0.3;
+  flex-shrink: 0;
+  border: 1px solid rgb(0, 0, 0, 0.1);
+  border-radius: $border-radius-md; 
+  height: 100%;
+  align-content: center;
+  background-color: $color-white;
+  &:hover {
+    cursor: pointer;
+    .count-label,
+    .count-number {
+      color: $color-primary;
+    }
+  }
+}
+.count-number {
+  font-size: $font-size-base + 0.5rem;
+  font-weight: bold;
+  color: $color-text-grey;
+  margin-bottom: $spacing-xxs;
+}
+
+.count-label {
+  font-size: $font-size-base;
+  color: $color-text-grey;
+  text-transform: uppercase;
+}

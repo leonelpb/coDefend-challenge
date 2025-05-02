@@ -1,0 +1,6 @@
+<router-outlet></router-outlet>
+@if (showOnboardingModal) {
+    <app-onboarding-layout (onboardingComplete)="closeOnboardingModal()"></app-onboarding-layout> }
+@if (showScanModal) {
+  <app-scan-layout (scanComplete)="closeScanModal()"></app-scan-layout> 
+}

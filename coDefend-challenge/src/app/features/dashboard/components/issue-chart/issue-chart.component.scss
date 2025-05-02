@@ -1,0 +1,58 @@
+@import "./../../../../../styles/variables";
+.issue-chart-card {
+  background-color: $color-white;
+  border-radius: $border-radius-md;
+  padding: $spacing-md;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.chart-layout {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: $spacing-lg;
+  align-items: center;
+}
+
+.chart-legend {
+  grid-column: 1;
+  gap: $spacing-sm;
+
+  .chart-legend-titles th{
+    text-align: left;
+  }
+  .legend-title {
+    font-size: $font-size-base;
+    font-weight: bold;
+    color: $color-text-dark;
+    margin: 0; 
+  }
+
+  .legend-items {
+    .item-level {
+      font-size: $font-size-base;
+      color: $color-text-dark;
+    }
+
+    .item-count {
+      font-size: $font-size-base;
+      color: $color-text-grey;
+      text-align: left;
+    }
+  }
+
+  .no-data-message {
+    text-align: center;
+    padding: $spacing-md 0;
+    color: $color-text-grey;
+  }
+}
+
+.chart-area {
+  grid-column: 2;
+  width: 150px; 
+  height: 150px; 
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+}

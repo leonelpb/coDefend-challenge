@@ -1,0 +1,20 @@
+<div class="section-card">
+  <div class="section-radar"></div>
+  <app-radar [size]="200"></app-radar>
+  <!-- Área del contenido y botón -->
+  <div class="section-content-area">
+    <h3 class="section-title">{{ title }}</h3>
+    <div class="section-projected-content">
+      <p>
+        Aún no hemos detectado vulnerabilidades ni amenazas en sus sitemas, pero
+        hay un escaneo automático procesando informacion, apenas se localice
+        una, vos y tu equipo serán notificados.
+      </p>
+    </div>
+    <app-button
+      [text]="buttonText"
+      variant="tertiary"
+      (click)="onButtonClick()"
+    ></app-button>
+  </div>
+</div>

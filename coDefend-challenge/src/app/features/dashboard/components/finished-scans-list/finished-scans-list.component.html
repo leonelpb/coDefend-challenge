@@ -1,0 +1,26 @@
+<div class="finished-scans-card">
+    <h3 class="card-title">Todos scaneos finalizados o detenidos</h3>
+    <!--@if(scans.length === 0)"Usar cuando se realice de manera dinamica"{-->
+      <p class="no-scans-message">Actualmente no hay scanners automaticos en curso.</p>
+    <!--}-->
+  
+    <table class="scans-table">
+      <thead>
+        <tr>
+          <th class="header-date">date</th>
+          <th class="header-domain">domain</th>
+          <th class="header-issues">total issues</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Iterar sobre la lista de escaneos -->
+        @for (scan of scans; track trackByScan($index, scan)) {
+          <tr class="scan-row">
+            <td class="scan-date">{{ scan.date }}</td>
+            <td class="scan-domain">{{ scan.domain }}</td>
+            <td class="scan-issues">{{ scan.totalIssues }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>

@@ -1,0 +1,28 @@
+<p>
+  <b>Su usuario ha sido creado.</b> Verifique su dominio y el alcance y presione continuar para añadir su primer recurso. A continuacion vamos a realizar un analisis automatizado sobre su dominio principal.
+</p>
+<h4>Definir superficie del scanner:</h4>
+<div class="input-container">
+  <input
+  [type]="'text'"
+  [placeholder]="placeholder"
+  [id]="id"
+  [name]="name"
+  [value]="value"
+  (input)="onInput($event)"
+  (blur)="onBlur()"
+  (click)="onClickInput()"
+  >
+  <div class="input-icon" (click)="onIconClick()">
+      <img src="/assets/codefendScope.png" class="icon" alt="">
+  </div>
+</div>
+@if (showSuggestions) {
+  <div class="suggestions-list">
+    @for (suggestion of filteredSuggestions; track suggestion) {
+      <div class="suggestion-item" (click)="selectSuggestion(suggestion)">
+         <span class="suggestion-text">{{ suggestion }}</span>
+         <img src="assets/flags/us.svg" alt="Flag" class="suggestion-flag"> </div>
+    }
+  </div>
+}

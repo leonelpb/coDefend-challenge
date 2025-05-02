@@ -1,0 +1,23 @@
+@import '../../../../styles/variables';
+
+.input-field {
+  margin-bottom: $spacing-sm; 
+  input {
+    width: 100%;
+    padding: $spacing-xs $spacing-sm; 
+    font-size: $font-size-base; 
+    line-height: 1.5;
+    border: 1px solid $color-border-grey; 
+    border-radius: $border-radius-sm;
+    box-sizing: border-box; 
+    outline: none; 
+
+    &::placeholder {
+      color: $color-text-grey; 
+    }
+
+    &:focus {
+      border-color: $color-primary; 
+    }
+  }
+}

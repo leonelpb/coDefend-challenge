@@ -1,0 +1,57 @@
+@import'./../../../../../styles/variables';
+.finished-scans-card {
+  background-color: $color-white; 
+  border-radius: $border-radius-md; 
+  padding: $spacing-md; 
+}
+.card-title {
+  font-size: $font-size-base ;
+  font-weight: bold;
+  color: $color-text-dark;
+  margin: 0 0 $spacing-xs 0; 
+}
+.no-scans-message {
+  font-size: $font-size-base;
+  color: $color-text-grey;
+  margin: 0 0 $spacing-sm 0;
+}
+
+
+.scans-table {
+  width: 100%; 
+  border-collapse: collapse; 
+  border-spacing: 0; 
+}
+
+/* Estilos para el encabezado de la tabla */
+thead tr th {
+  text-align: left; 
+  font-size: $font-size-base; 
+  font-weight: bold;
+  color: $color-text-grey;
+  padding-bottom: $spacing-xs; 
+  padding-top: 0;
+}
+
+/* Anchos de columnas (ajusta según el diseño) */
+.header-date { width: 25%; } 
+.header-domain { width: 50%; } 
+.header-issues { width: 25%; text-align: center; } 
+
+/* Estilos para las filas de datos */
+.scan-row td {
+  font-size: $font-size-base;
+  color: $color-text-grey;
+  padding: $spacing-xs 0; 
+  border-bottom: 1px solid $color-background-light-grey; 
+  text-align: left;
+}
+
+/* Estilo para la última fila */
+tbody tr:last-child td {
+  border-bottom: none; 
+}
+
+.scan-domain {
+  word-break: break-word; 
+}

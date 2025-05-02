@@ -1,0 +1,73 @@
+@import "./../../../../styles/variables";
+
+:host,
+.onboarding-container-header {
+  display: flex;
+  flex-direction: column;
+  background-color: $color-white;
+  box-sizing: border-box;
+}
+.onboarding-container {
+  max-width: 25vw;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.onboarding-container-header {
+  padding: $spacing-sm $spacing-xl;
+  padding-bottom: 0;
+}
+.onboarding-container-body {
+  display: flex;
+  flex-direction: column;
+  background-color: $color-white;
+  padding: $spacing-md $spacing-xl;
+  padding-top: 0;
+  flex-grow: 2;
+  position: relative;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: $spacing-md;
+}
+h4 {
+  margin-bottom: 0;
+}
+s p {
+  text-align: center;
+  margin-bottom: $spacing-lg;
+  color: $color-text-grey;
+  font-size: $font-size-base * 0.9;
+}
+
+// Componentes
+app-business-details,
+app-personal-details,
+app-create-password {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+// Botones de navegación
+.navigation {
+  display: grid;
+  grid-template-columns: 42% 55%;
+  align-items: start;
+  column-gap: 3%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: $spacing-md $spacing-xl;
+  padding-top: 0;
+  box-sizing: border-box;
+
+  app-button {
+    &:only-child {
+      width: 100%;
+      grid-column: 2;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+<div class="team-members-card">
+  <!-- Puedes poner el título "Email" y "Member role" como thead de una tabla -->
+  <table class="members-table">
+    <thead>
+      <tr>
+        <th class="header-email">Email</th>
+        <th class="header-role">Member role</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Iterar sobre la lista de colaboradores -->
+      @for (collaborator of collaborators; track trackByEmail($index ,collaborator)) {
+        <tr class="member-row">
+          <td class="member-email">{{ collaborator.email }}</td>
+          <td class="member-role">{{ collaborator.role }}</td>
+        </tr>
+      } @empty {
+        <!-- Mensaje si la lista de colaboradores está vacía -->
+        <tr>
+          <td colspan="2" class="no-members-message">No hay colaboradores disponibles.</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

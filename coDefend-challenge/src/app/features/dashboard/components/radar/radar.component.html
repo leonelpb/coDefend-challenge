@@ -1,0 +1,44 @@
+<div class="radar-container">
+
+  <canvas #radarCanvas
+          class="radar-canvas"
+          [width]="size"
+          [height]="size"
+          [style.filter]="'blur(0.5px)'">
+    Tu navegador no soporta Canvas.
+  </canvas>
+
+  @if (!notBugs) {
+    <div class="radar-bugs-container">
+      @for (point of renderedPoints; track trackPointById($index, point);) {
+        <div
+          class="radar-bug-content"
+          [class.animate-detected]="point.detected" 
+          [style.left]="(point.x / size) * 100 + '%'" 
+          [style.top]="(point.y / size) * 100 + '%'" 
+          [style.opacity]="point.opacity" 
+          [style.transform]="'translate(-50%, -50%) scale(' + (point.detected ? 1.05 : 1) + ') rotate(' + point.rotation + 'deg)'"
+        >
+          <div class="radar-bug">
+            <div class="radar-bug-glow"
+                 [class.animate-detected]="point.detected" 
+                 [style.opacity]="point.opacity * 0.7"></div>
+
+            <img
+              [src]="point.originalX % 2 === 0 ? 'assets/bug-3.png' : 'assets/bug-1.png'"
+              alt="Bug detectado"
+              class="bug"
+              width="36"
+              height="36"
+              [style.filter]="'brightness(' + (1 + point.opacity * 0.3) + ')'" 
+              [style.transform]="'scale(' + (1 + point.opacity * 0.1) + ')'" 
+            />
+          </div>
+        </div>
+      } @empty {
+        <div class="no-bugs-message">No se encontraron bugs (o la lista está vacía).</div>
+      }
+    </div>
+  }
+
+  </div>
