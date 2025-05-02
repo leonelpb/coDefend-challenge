@@ -79,7 +79,7 @@ Las variables de entorno se configuran en los archivos dentro de `src/environmen
 
 El componente \`ScanAnalysisComponent\`posee una barra buscadora que al hacer CLICK despliega una lista de sugerencias con un estilo personalizado, para observar la lista se debe hacer CLICK en la barra buscadora.La imagen adjunta muestra el comportamiento de este input.
 
-# ![][image1]![][image2]
+![image1](./coDefend-process/instruction-2-before)![][image2](./coDefend-process/instruction-2-after)
 
 En el componente “DashboardLayoutComponent” es donde tenemos la mayoría assets, en la segunda columna del dashboard “la del medio” es donde tenemos nuestro primer asset que al hacer CLICK te muestra la lista de issues.La imagen adjunta muestra el display de nuestro asser “issues-list”.
 
@@ -94,5 +94,5 @@ scanProgressValue \< 100                            scanProgressValue \>= 100
 ![][image6]![][image7]
 
 
-
+![Logo](./assets/logo.png)
 
