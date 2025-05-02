@@ -79,20 +79,18 @@ Las variables de entorno se configuran en los archivos dentro de `src/environmen
 
 El componente \`ScanAnalysisComponent\`posee una barra buscadora que al hacer CLICK despliega una lista de sugerencias con un estilo personalizado, para observar la lista se debe hacer CLICK en la barra buscadora.La imagen adjunta muestra el comportamiento de este input.
 
-![image1](coDefend-process/instruction-2-before.png) ![image2](coDefend-process/instruction-2-after.png)
+![image1](coDefend-process/instruction-2-before.jpg) ![image2](coDefend-process/instruction-2-after.png)
 
 En el componente “DashboardLayoutComponent” es donde tenemos la mayoría assets, en la segunda columna del dashboard “la del medio” es donde tenemos nuestro primer asset que al hacer CLICK te muestra la lista de issues.La imagen adjunta muestra el display de nuestro asser “issues-list”.
 
-![][image3]
+![image3](coDefend-process/instruction-3-before.png)
 
-![][image4]
+![image4](coDefend-process/instruction-3-after.png)
 
 Por último tenemos nuestros componentes “ProgressStatComponent” y “FinishedScansListComponent”, estos se muestran dependiendo de una condicional, SI scanProgressValue \< 100 entonces me va a mostrar “ProgressStatComponent”  SI NO muestra el “FinishedScansListComponent” , la condicional es un input que recibe “ProgressStatComponent“ de su padre “DashboardLayoutComponent”. La imagen siguiente muestra el input que se debe modificar para poder mostrar el componente  “FinishedScansListComponent”  
-![][image5]
+![image5](coDefend-process/instruction-4-value-change.png)
 
 scanProgressValue \< 100                            scanProgressValue \>= 100  
-![][image6]![][image7]
+![image6](coDefend-process/instruction-4-before.png) ![image7](coDefend-process/instruction-4-after.png)
 
-
-![Logo](./assets/logo.png)
 
