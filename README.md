@@ -69,15 +69,15 @@ Las variables de entorno se configuran en los archivos dentro de `src/environmen
 
 ## **Hitos Logrados**
 
-* # Finalización de la maquetación del desafío propuesto.
+ Finalización de la maquetación del desafío propuesto.
 
-* # Implementación de los componentes principales: \`DashboardComponent\`, \`OnBoardingComponent\` y \`ScanAnalysisComponent\`.
+ Implementación de los componentes principales: \`DashboardComponent\`, \`OnBoardingComponent\` y \`ScanAnalysisComponent\`.
 
-* # Recrear el flujo de registro de usuario.
+ Recrear el flujo de registro de usuario.
 
 ## **Lógica Condicional de Componentes**
 
-# El componente \`ScanAnalysisComponent\`posee una barra buscadora que al hacer CLICK despliega una lista de sugerencias con un estilo personalizado, para observar la lista se debe hacer CLICK en la barra buscadora.La imagen adjunta muestra el comportamiento de este input.
+El componente \`ScanAnalysisComponent\`posee una barra buscadora que al hacer CLICK despliega una lista de sugerencias con un estilo personalizado, para observar la lista se debe hacer CLICK en la barra buscadora.La imagen adjunta muestra el comportamiento de este input.
 
 # ![][image1]![][image2]
 
